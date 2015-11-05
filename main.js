@@ -1,7 +1,20 @@
-// var router = new Router();   //tells Backbone to listen for changes
-// Backbone.history.start();
+var Router = Backbone.Router.extend({
+  routes: {
+    ''          :'home',
+    'login'     :'login',
+    'register'  :'register',
+    'dashboard' :'dashboard', // need to make funciton called db
+    'users'     :'users', //need to make function called users
+    'user/:id'  :'userId'  //need to make function called userId
+  },
+})
 
 
+// $.ajaxSetup({
+//  headers: {
+//    "Authorization": "token " + token
+//  }
+// });
 
 
 // Make a new model.
@@ -68,3 +81,6 @@ tweetsCollection.fetch({
     $('main').append(feedView.el);
   }
 });
+//
+// var router = new Router();   //tells Backbone to listen for changes
+// Backbone.history.start();
