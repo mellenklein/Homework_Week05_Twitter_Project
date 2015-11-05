@@ -6,9 +6,16 @@
   </head>
 
   <body>
-
+      <header>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#user/:id">Profile</a>
+          <a href="#users">Users</a>
+          <a href="#login">Login</a>
+        </nav>
+      </header>
     <main>
-
     </main>
 
     <script type="text/template" id="inputBoxTemplate">
@@ -19,11 +26,11 @@
 
     <script type="text/template" id="tweetViewTemplate">
         <header>
-          <a href="#">@FreddyRoberts</a>
+          <a href="#user/:id">@<%= name %></a>
         </header>
           <img src="http://www.fillmurray.com/50/50"/>
-          <p>Just saw a really cool lecture about UX! @mike is the man!</p>
-          <time>November 4, 2015 at 6pm</time>
+          <p>Message: <%= message %></p>
+          <time>Sent: <%= created %></time>
     </script>
 
 
