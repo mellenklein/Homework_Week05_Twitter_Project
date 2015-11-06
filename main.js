@@ -64,14 +64,19 @@ var AppRouter = Backbone.Router.extend({
 var Tweet = Backbone.Model.extend({
   // When we make a new Tweet,
   // this will use the GET Method to print a new tweet from this API.
-  url: 'https://twitter-pi.herokuapp.com/users'
+  url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
 });
 
 // Make a new collection.
 var Tweets = Backbone.Collection.extend({
   model: Tweet,
-  url: 'https://twitter-pi.herokuapp.com/users'
+  url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
 });
+
+// var Dashboard = Backbone.Collection.extend({
+//   model: followedTweets,
+//   url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
+// });
 
 // Make a new Model for the login and register pages:
 var Form1 = Backbone.Model.extend({
