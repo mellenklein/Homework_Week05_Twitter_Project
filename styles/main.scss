@@ -1,12 +1,34 @@
+
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "variables";
 @import "../bower_components/neat/app/assets/stylesheets/neat";
 
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 body {
   @include outer-container;
   font-family: 'Helvetica' sans-serif;
 }
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+  @include outer-container(800px);
+  @include vertical-align();
+}
+
 
 main{
   @include span-columns(12 of 12);

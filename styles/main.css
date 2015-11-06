@@ -16,6 +16,26 @@ body {
     content: "";
     display: table; }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+main {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  main::after {
+    clear: both;
+    content: "";
+    display: table; }
+
 main {
   float: left;
   display: block;
