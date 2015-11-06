@@ -1,0 +1,22 @@
+{
+  "name": "wed",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mellenklein/Homework_Week05_Twitter_Project",
+  "authors": [
+    "Mary Ellen Klein <maryellenklein@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "neat": "~1.7.2"
+  }
+}
