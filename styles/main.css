@@ -1,0 +1,42 @@
+body {
+  font-family: 'Helvetica' sans-serif; }
+
+header nav {
+  margin: 10px; }
+  header nav a {
+    text-decoration: none;
+    color: #53A7E8;
+    font-size: 1.5em;
+    padding: 50px 10px;
+    margin-left: 50px; }
+    header nav a:hover {
+      color: pink; }
+    header nav a .fa {
+      font-size: 2em; }
+
+.feed {
+  display: block;
+  margin: 50px; }
+  .feed img {
+    float: left;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-right: 10px; }
+  .feed header {
+    border-bottom: 1px solid #E1E8ED;
+    padding-bottom: 10px; }
+  .feed .tweet {
+    display: block;
+    margin: 0px 0 10px; }
+  .feed .email {
+    text-decoration: none;
+    color: #53A7E8;
+    font-weight: bold;
+    float: left;
+    display: block;
+    margin-top: 20px; }
+  .feed time {
+    color: gray;
+    margin: 0;
+    line-height: 58px;
+    padding: 10px 0; }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/main.css" media="screen" title="no title" charset="utf-8">
     <meta charset="utf-8">
     <title>Backbone Views + Models and Collections</title>
   </head>
@@ -8,14 +10,15 @@
   <body>
       <header>
         <nav>
-          <a href="#">Home</a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
           <a href="#dashboard">Dashboard</a>
           <a href="#user/:id">Profile</a>
           <a href="#users">Users</a>
-          <a href="#login">Login</a>
+          <a id="forms" href="#login">Login</a>
         </nav>
       </header>
     <main>
+      <section class="feed"></section>
     </main>
 
     <script type="text/template" id="inputBoxTemplate">
@@ -25,12 +28,13 @@
     </script>
 
     <script type="text/template" id="tweetViewTemplate">
+        <img src="http://www.fillmurray.com/50/50"/>
         <header>
-          <a href="#user/:id">@<%= name %></a>
+          <a class="email" href="#user/:id"><%= email %></a>
+          <time>Sent: <%= tweets[0].created_at %></time>
+          <p class="tweet">Message: <%= tweets[0].body %></p>
         </header>
-          <img src="http://www.fillmurray.com/50/50"/>
-          <p>Message: <%= message %></p>
-          <time>Sent: <%= created %></time>
+
     </script>
 
 
