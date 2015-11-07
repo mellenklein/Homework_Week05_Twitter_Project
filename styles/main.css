@@ -1,5 +1,48 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
 body {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Helvetica' sans-serif; }
+  body::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+main {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  main::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+main {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  main:last-child {
+    margin-right: 0; }
 
 header nav {
   margin: 10px; }
@@ -10,7 +53,7 @@ header nav {
     padding: 50px 10px;
     margin-left: 50px; }
     header nav a:hover {
-      color: pink; }
+      color: navy; }
     header nav a .fa {
       font-size: 2em; }
 
@@ -40,3 +83,15 @@ header nav {
     margin: 0;
     line-height: 58px;
     padding: 10px 0; }
+
+section.form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  section.form:last-child {
+    margin-right: 0; }
+  section.form input.email {
+    height: 40px; }
+  section.form input.pwd {
+    height: 40px; }
