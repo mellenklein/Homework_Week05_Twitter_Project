@@ -31,11 +31,11 @@
 
     <script type="text/template" id="tweetViewTemplate">
         <img src="http://www.fillmurray.com/50/50"/>
-        <header>
-            <a class="email" href="#user/:id"><%= data[0].attributes.email %></a>
-            <time>Sent: <%= included[0].attributes.created_at %></time>
-            <p class="tweet">Tweet: <%= included[0].attributes.body %></p>
-        </header>
+      <header>
+        <a class="email" href="#user/:id"><%= data[0].attributes.email %></a>
+        <time><%= moment(included[0].attributes.created_at).startOf('day').fromNow() %></time>
+        <p class="tweet">Tweet: <%= included[0].attributes.body %></p>
+      </header>
     </script>
 
     <script type="text/template" id="followedTweetsTemplate">
@@ -50,6 +50,7 @@
 
     <script src="token.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
     <script src="main.js"></script>
