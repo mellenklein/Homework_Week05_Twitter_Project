@@ -18,9 +18,9 @@ var AppRouter = Backbone.Router.extend({
   },
 
   dashboard: function(){
-    tweetsCollection.fetch({
+    dashboardCollection.fetch({
       success: function(){
-        $('.feed').html(feedView.el);
+        $('.feed').html(dashboardView.el);
       }
     });
   },
@@ -47,7 +47,6 @@ var AppRouter = Backbone.Router.extend({
     $('.forms').attr('href', 'register');
   }
 
-
 })
 // $('nav a').click(function(){
 //
@@ -60,6 +59,10 @@ var AppRouter = Backbone.Router.extend({
 // });
 
 
+
+//////////////////////////////////////////
+//       MODELS AND COLLECTIONS        //
+////////////////////////////////////////
 // Make a new model.
 var Tweet = Backbone.Model.extend({
   // When we make a new Tweet,
@@ -73,10 +76,10 @@ var Tweets = Backbone.Collection.extend({
   url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
 });
 
-// var Dashboard = Backbone.Collection.extend({
-//   model: followedTweets,
-//   url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
-// });
+var Dashboard = Backbone.Collection.extend({
+  model: Tweet,
+  url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
+});
 
 // Make a new Model for the login and register pages:
 var Form1 = Backbone.Model.extend({
@@ -86,12 +89,18 @@ var Form1 = Backbone.Model.extend({
 });
 
 
-
+//////////////////////////////////////////
+//              VIEWS                  //
+////////////////////////////////////////
 //Make a new view for individual tweets.
 var TweetView = Backbone.View.extend({
   tagName: 'article',
   className: 'tweet',
   template: _.template($('#tweetViewTemplate').html()),
+
+  initialize: function(){
+    this.listenTo(this.collection, 'fetch sync', this.render)
+  },
 
   render: function(){
     var data = this.model.toJSON();
@@ -123,6 +132,44 @@ var FeedView = Backbone.View.extend({
   }
 });
 
+var DashboardTweetView = Backbone.View.extend({
+  tagName: 'article',
+  className: 'tweet',
+  template: _.template($('#followedTweetsTemplate').html()),
+
+  // initialize: function(){
+  //   this.listenTo(this.collection, 'fetch sync', this.render)
+  // },
+
+  render: function(){
+    var data = this.model.toJSON();
+    this.$el.html(this.template(data));
+    return this;
+  }
+});
+
+var DashboardFeedView = Backbone.View.extend({
+  tagName: 'section',
+  className: 'feed',
+
+  initialize: function(){
+    this.listenTo(this.collection, 'fetch sync', this.render)
+  },
+
+  render: function(){
+    var view = this;
+
+    this.$el.html('');
+    this.collection.each(function(model){
+      var tweet = new DashboardTweetView({
+        model: model
+      });
+      tweet.render();
+      view.$el.append(tweet.el);
+    });
+  }
+});
+
 //Make a new view for the form.
 var FormView = Backbone.View.extend({
   tagName: 'section',
@@ -136,12 +183,22 @@ var FormView = Backbone.View.extend({
 });
 
 
-// creates new instance of collected tweets
+
+//////////////////////////////////////////
+//              RENDERING              //
+////////////////////////////////////////
+// creates new instance of Collection (collected tweets)
 var tweetsCollection = new Tweets();
 
-// creates new instance of view of the feed.
+// creates new instance of View of the feed.
 var feedView = new FeedView({
   collection: tweetsCollection
+});
+
+var dashboardCollection = new Dashboard();
+
+var dashboardView = new DashboardFeedView({
+  collection: dashboardCollection
 });
 
 
