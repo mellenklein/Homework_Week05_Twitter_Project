@@ -26,16 +26,25 @@
       <input type="text" class="email" placeholder="Email"/>
       <input type="text" class="pwd" placeholder="Password"/>
       <input type="button" class="login" value="Log In"/>
+      <input type="button" href="#register" class="register" value="Register"/>
     </script>
 
     <script type="text/template" id="tweetViewTemplate">
         <img src="http://www.fillmurray.com/50/50"/>
         <header>
-          <a class="email" href="#user/:id"><%= data[0].attributes.email %></a>
-          <time>Sent: <%= included[0].attributes.created_at %></time>
-          <p class="tweet">Tweet: <%= included[0].attributes.body %></p>
+            <a class="email" href="#user/:id"><%= data[0].attributes.email %></a>
+            <time>Sent: <%= included[0].attributes.created_at %></time>
+            <p class="tweet">Tweet: <%= included[0].attributes.body %></p>
         </header>
+    </script>
 
+    <script type="text/template" id="followedTweetsTemplate">
+      <img src="http://www.fillmurray.com/50/50"/>
+      <header>
+        <a class="email" href="#dashboard"><%= data[0].attributes.email %></a>
+        <time>Sent: <%= included[0].attributes.created_at %></time>
+        <p class="tweet">Tweet: <%= included[0].attributes.body %></p>
+      </header>
     </script>
 
 
