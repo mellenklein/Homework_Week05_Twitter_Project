@@ -34,21 +34,17 @@ var AppRouter = Backbone.Router.extend({
   },
 
   login: function(){
-    var loginForm = new FormView();
-    loginForm.render()
-    $('main').html(loginForm.el);
+    var view = new FormView();
+    $('main').html(view.render().$el);
   },
 
   register: function(){
-    var loginForm = new FormView();
-    loginForm.render()
-    $('main').html(loginForm.el);
-    $('.forms').html('Register');
-    $('.forms').attr('href', 'register');
+    var view = new regView();
+    $('main').html(view.render().$el);
   }
 
 
-})
+});
 // $('nav a').click(function(){
 //
 // });
@@ -83,6 +79,18 @@ var Form1 = Backbone.Model.extend({
   //When we click the login button,
   // this will use the POST method to send the form info to the server.
   url: 'http://tiny-starburst.herokuapp.com/collections/chat'
+});
+
+// Make a new Collection and Model for the user data
+
+var user = Backbone.Model.extend({
+    url: 'https://twitter-pi.herokuapp.com/users'
+});
+
+
+var users = Backbone.Collection.extend({
+  model: user,
+  url: 'https://twitter-pi.herokuapp.com/users'
 });
 
 
@@ -127,7 +135,7 @@ var FeedView = Backbone.View.extend({
 var FormView = Backbone.View.extend({
   tagName: 'section',
   className: 'form',
-  template: _.template($('#inputBoxTemplate').html()),
+  template: _.template($('#LoginTemplate').html()),
 
   render: function(){
     this.$el.html(this.template());
@@ -135,6 +143,16 @@ var FormView = Backbone.View.extend({
   }
 });
 
+var regView = Backbone.View.extend({
+  tagName: 'section',
+  className: 'regForm',
+  template: _.template($('#RegisterTemplate').html()),
+
+  render: function(){
+    this.$el.html(this.template());
+    return this;
+  }
+});
 
 // creates new instance of collected tweets
 var tweetsCollection = new Tweets();
