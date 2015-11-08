@@ -115,26 +115,37 @@ header {
     margin-right: 10px;
   }
   header {
-    border-bottom: 1px solid #E1E8ED;
+    border-bottom: 1px solid $feedBorder;
     padding-bottom: 10px;
   }
   .tweet {
     display: block;
-    margin:0px 0 10px;
+    margin:0px 0px 0px 0px;
+    &:hover {
+      background-color: $feedHoverBg;
+    }
   }
   .email {
     text-decoration: none;
-    color: #53A7E8;
+    color: $twitterBlue;
     font-weight: bold;
     float: left;
     display: block;
     margin-top: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   time {
     color: gray;
     margin: 0;
     line-height: 58px;
+    font-size: 12px;
     padding: 10px 0;
+    &:hover {
+      text-decoration: underline;
+    }
+
   }
 }
 section.form,
@@ -151,12 +162,12 @@ section.regForm {
     font-size: 0.8em;
     padding: 8px 60px 8px 5px;
     border-radius: 5px;
-    border: 1px solid #E1E8ED;
+    border: 1px solid $loginBorder;
   }
   .instructions {
     color: gray;
     font-size: 0.9em;
-    border-top: 1px solid #E1E8ED;
+    border-top: 1px solid $loginBorder;
     padding-top: 15px;
     a {
       text-decoration: none;

@@ -110,7 +110,9 @@ header .homeHeader {
     padding-bottom: 10px; }
   .feed .tweet {
     display: block;
-    margin: 0px 0 10px; }
+    margin: 0px 0px 0px 0px; }
+    .feed .tweet:hover {
+      background-color: #F5F8FA; }
   .feed .email {
     text-decoration: none;
     color: #53A7E8;
@@ -118,11 +120,16 @@ header .homeHeader {
     float: left;
     display: block;
     margin-top: 20px; }
+    .feed .email:hover {
+      text-decoration: underline; }
   .feed time {
     color: gray;
     margin: 0;
     line-height: 58px;
+    font-size: 12px;
     padding: 10px 0; }
+    .feed time:hover {
+      text-decoration: underline; }
 
 section.form,
 section.regForm {
