@@ -23,45 +23,40 @@ html, body {
   padding: 0; }
 
 main {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin-top: 500px; }
-  main::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-main {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%;
-  margin-top: 180px; }
+  position: relative;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
   main:last-child {
     margin-right: 0; }
 
 header.top {
-  margin-bottom: 100px; }
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  position: fixed;
+  background: white; }
+  header.top:last-child {
+    margin-right: 0; }
 
-header nav {
+header.top nav {
   margin: 10px; }
-  header nav a {
+  header.top nav a {
     text-decoration: none;
     color: #53A7E8;
     font-size: 1.5em;
     padding: 50px 10px 10px;
     margin-left: 50px; }
-    header nav a:hover {
+    header.top nav a:hover {
       color: navy; }
-    header nav a .fa {
+    header.top nav a .fa {
       font-size: 2em; }
-  header nav a#searchBtn {
+  header.top nav a#searchBtn {
     margin-left: 0;
     font-size: 1em;
     border: 1px solid #E1E8ED;
@@ -69,55 +64,62 @@ header nav {
     padding: 3px;
     color: white;
     background-color: #53A7E8; }
-  header nav #logOutBtn {
+  header.top nav #logOutBtn {
     font-size: 1em;
     margin-left: 0; }
-  header nav .smallAvatar {
+  header.top nav .smallAvatar {
     border-radius: 5px; }
-  header nav .profileHeader {
+  header.top nav .profileHeader {
     float: right; }
-    header nav .profileHeader input {
+    header.top nav .profileHeader input {
       border-radius: 10px;
       padding: 5px;
       border: 1px solid #E1E8ED; }
-  header nav .twitterBird {
+  header.top nav .twitterBird {
     margin-left: 280px;
     font-size: 1em; }
-  header nav #homeBtn {
+  header.top nav #homeBtn {
     font-size: 1em; }
-  header nav .loginHeader {
+  header.top nav .loginHeader {
     text-align: center;
     display: inline;
     margin-left: 35%;
     color: gray; }
-    header nav .loginHeader .login {
+    header.top nav .loginHeader .login {
       font-size: 1em;
       margin-left: 0px; }
 
-header .homeHeader {
+header.top .homeHeader {
   float: right; }
-  header .homeHeader a {
+  header.top .homeHeader a {
     font-size: 1em; }
 
 .feed {
+  float: left;
   display: block;
-  margin: 200px 50px 50px 200px; }
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  display: block;
+  margin: 100px 50px 50px 200px;
+  position: static; }
+  .feed:last-child {
+    margin-right: 0; }
   .feed img {
     float: left;
     margin-top: 20px;
     border-radius: 5px;
     margin-right: 10px; }
-  .feed header {
+  .feed header.tweetHeader {
     border-bottom: 1px solid #E1E8ED;
     padding-bottom: 10px; }
-    .feed header p {
+    .feed header.tweetHeader p {
       color: #000000;
       font-size: 14px; }
-    .feed header a {
+    .feed header.tweetHeader a.fa {
       text-decoration: none;
       color: #AAB8C2;
       margin: 10px 15px 5px 15px; }
-      .feed header a:hover {
+      .feed header.tweetHeader a.fa:hover {
         color: #53A7E8; }
   .feed .tweet {
     display: block;
@@ -149,7 +151,8 @@ section.regForm {
   margin-right: 2.35765%;
   width: 31.76157%;
   text-align: center;
-  margin-left: 50%; }
+  margin-left: 40%;
+  margin-top: 50%; }
   section.form:last-child,
   section.regForm:last-child {
     margin-right: 0; }
