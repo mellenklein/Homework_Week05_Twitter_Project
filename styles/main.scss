@@ -37,11 +37,12 @@ main{
 header {
   nav {
     margin: 10px;
+    // background: gray;
     a {
     text-decoration: none;
     color: $twitterBlue;
     font-size: 1.5em;
-    padding: 50px 10px;
+    padding: 50px 10px 10px;
     margin-left: 50px;
       &:hover{
         color: navy;
@@ -49,6 +50,53 @@ header {
       .fa {
         font-size: 2em;
       }
+    }
+    a#searchBtn {
+      margin-left: 0;
+      font-size: 1em;
+      border: 1px solid #E1E8ED;
+      border-radius: 5px;
+      padding: 3px;
+      color: white;
+      background-color: $twitterBlue;
+    }
+    #logOutBtn {
+      font-size: 1em;
+      margin-left: 0;
+    }
+    .smallAvatar {
+      border-radius: 5px;
+    }
+    .profileHeader {
+      float: right;
+      input {
+        border-radius: 10px;
+        padding: 5px;
+        border: 1px solid #E1E8ED;
+      }
+    }
+    .twitterBird {
+      margin-left: 280px;
+      font-size: 1em;
+    }
+    #homeBtn {
+      font-size: 1em;
+    }
+    .loginHeader {
+      text-align: center;
+      display: inline;
+      margin-left: 35%;
+      color: gray;
+      .login {
+        font-size: 1em;
+        margin-left: 0px;
+      }
+    }
+  }
+  .homeHeader {
+    float: right;
+    a {
+      font-size: 1em;
     }
   }
 }
@@ -87,10 +135,45 @@ header {
 }
 section.form {
   @include span-columns(4 of 12);
-  input.email {
-    height: 40px;
-  }
+  text-align: center;
+  margin-left: 50%;
+
+  input.email,
   input.pwd {
-    height: 40px;
+    width: 100%;
+    margin: 5px;
+    font-size: 0.8em;
+    padding: 8px 60px 8px 5px;
+    border-radius: 5px;
+    border: 1px solid #E1E8ED;
+  }
+  .instructions {
+    color: gray;
+    font-size: 0.9em;
+    border-top: 1px solid #E1E8ED;
+    padding-top: 15px;
+    a {
+      text-decoration: none;
+      color: $twitterBlue;
+      transition: text-decoration 0.5s ease;
+      &:hover{
+        text-decoration: underline;
+        transition: text-decoration 0.5s ease;
+      }
+    }
+  }
+
+  a.login{
+    color: white;
+    text-decoration: none;
+    background: $twitterBlue;
+    padding: 10px 60px;
+    display: block;
+    margin: 5px auto;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 5px;
   }
 }

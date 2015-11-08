@@ -8,27 +8,20 @@
   </head>
 
   <body>
-      <header>
-        <nav>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#dashboard">Dashboard</a>
-          <a href="#user/:id">Profile</a>
-          <a href="#users">Users</a>
-          <a id="forms" href="#login">Login</a>
-          <a id="forms" href="#register">Sign Up</a>
-        </nav>
-      </header>
+      <header class="top"></header>
 
     <main>
       <section class="feed"></section>
       <section class="form"></section>
     </main>
 
+    <footer></footer>
+
     <script type="text/template" id="inputBoxTemplate">
-      <input type="text" class="email" placeholder="Email"/>
+      <input type="text" class="email" placeholder="Email or username"/>
       <input type="text" class="pwd" placeholder="Password"/>
-      <input type="button" class="login" value="Log In"/>
-      <input type="button" href="#register" class="register" value="Register"/>
+      <a href="#dashboard" class="login">Log in</a>
+      <p class="instructions">Don't have an account? <a href="#register" class="register">Sign up »</a></p>
     </script>
 
     <script type="text/template" id="tweetViewTemplate">
@@ -49,7 +42,34 @@
       </header>
     </script>
 
+    <script type="text/template" id="headerHomeTemplate">
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <div class="homeHeader">
+        <a id="forms" href="#login">Login</a>
+        <a id="forms" href="#register">Sign Up</a>
+      </div>
+    </script>
 
+    <script type="text/template" id="headerDashboardTemplate">
+      <a href="#dashboard" id="homeBtn"><i class="fa fa-home"></i>Home</a>
+      <a href="#" class="twitterBird"><i class="fa fa-twitter"></i></a>
+      <div class="profileHeader">
+        <input type="text" class="search" placeholder="Search Twitter"/>
+        <a id="searchBtn" href="#">Search</a>
+        <a href="#user/:id"><img src="http://www.fillmurray.com/30/30" alt="avatar small" class="smallAvatar"/></a>
+        <a id="logOutBtn" href="#">Log Out</a>
+      </div>
+    </script>
+
+    <script type="text/template" id="headerLoginTemplate">
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <p class="loginHeader">Log in to Twitter</p>
+    </script>
+
+    <script type="text/template" id="headerRegisterTemplate">
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <p class="loginHeader">Have an account? <a href="#login" class="login">Login</a></p>
+    </script>
 
 
 

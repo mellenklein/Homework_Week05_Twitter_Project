@@ -13,16 +13,22 @@ var AppRouter = Backbone.Router.extend({
     tweetsCollection.fetch({
       success: function(){
         $('.feed').html(feedView.el);
-      }
+      },
     });
+      var headerView = new HeaderView();
+      headerView.render();
+      $('.top').html(headerView.el);
   },
 
   dashboard: function(){
     dashboardCollection.fetch({
       success: function(){
         $('.feed').html(dashboardView.el);
-      }
+      },
     });
+      var headerView = new HeaderDashboardView();
+      headerView.render();
+      $('.top').html(headerView.el);
   },
 
   userId: function(){
@@ -31,12 +37,18 @@ var AppRouter = Backbone.Router.extend({
         $('.feed').html(feedView.el);
       }
     });
+    var headerView = new HeaderDashboardView();
+    headerView.render();
+    $('.top').html(headerView.el);
   },
 
   login: function(){
     var loginForm = new FormView();
     loginForm.render();
     $('main').html(loginForm.el);
+    var headerView = new HeaderLoginView();
+    headerView.render();
+    $('.top').html(headerView.el);
   },
 
   register: function(){
@@ -45,9 +57,12 @@ var AppRouter = Backbone.Router.extend({
     $('main').html(loginForm.el);
     $('.forms').html('Register');
     $('.forms').attr('href', 'register');
+    var headerView = new HeaderRegisterView();
+    headerView.render();
+    $('.top').html(headerView.el);
   }
-
 })
+
 // $('nav a').click(function(){
 //
 // });
@@ -86,6 +101,10 @@ var Form1 = Backbone.Model.extend({
   //When we click the login button,
   // this will use the POST method to send the form info to the server.
   url: 'https://twittertiy.herokuapp.com/oauth/token'
+});
+
+var HeaderHome = Backbone.Model.extend({
+  url: 'https://twittertiy.herokuapp.com/users'
 });
 
 
@@ -137,10 +156,6 @@ var DashboardTweetView = Backbone.View.extend({
   className: 'tweet',
   template: _.template($('#followedTweetsTemplate').html()),
 
-  // initialize: function(){
-  //   this.listenTo(this.collection, 'fetch sync', this.render)
-  // },
-
   render: function(){
     var data = this.model.toJSON();
     this.$el.html(this.template(data));
@@ -175,6 +190,51 @@ var FormView = Backbone.View.extend({
   tagName: 'section',
   className: 'form',
   template: _.template($('#inputBoxTemplate').html()),
+
+  render: function(){
+    this.$el.html(this.template());
+    return this;
+  }
+});
+
+//Make a new view for the header.
+var HeaderView = Backbone.View.extend({
+  tagName: 'nav',
+  className: 'top',
+  template: _.template($('#headerHomeTemplate').html()),
+
+  render: function(){
+    this.$el.html(this.template());
+    return this;
+  }
+});
+
+var HeaderDashboardView = Backbone.View.extend({
+  tagName: 'nav',
+  className: 'top',
+  template: _.template($('#headerDashboardTemplate').html()),
+
+  render: function(){
+    this.$el.html(this.template());
+    return this;
+  }
+});
+
+var HeaderLoginView = Backbone.View.extend({
+  tagName: 'nav',
+  className: 'top',
+  template: _.template($('#headerLoginTemplate').html()),
+
+  render: function(){
+    this.$el.html(this.template());
+    return this;
+  }
+});
+
+var HeaderRegisterView = Backbone.View.extend({
+  tagName: 'nav',
+  className: 'top',
+  template: _.template($('#headerRegisterTemplate').html()),
 
   render: function(){
     this.$el.html(this.template());
