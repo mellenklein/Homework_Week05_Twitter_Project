@@ -60,13 +60,13 @@ var AppRouter = Backbone.Router.extend({
 var Tweet = Backbone.Model.extend({
   // When we make a new Tweet,
   // this will use the GET Method to print a new tweet from this API.
-  url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
+  url: 'https://twittertiy.herokuapp.com/users/?include=tweets'
 });
 
 // Make a new collection.
 var Tweets = Backbone.Collection.extend({
   model: Tweet,
-  url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
+  url: 'https://twittertiy.herokuapp.com/users/?include=tweets'
 });
 
 // var Dashboard = Backbone.Collection.extend({
@@ -78,19 +78,19 @@ var Tweets = Backbone.Collection.extend({
 var Form1 = Backbone.Model.extend({
   //When we click the login button,
   // this will use the POST method to send the form info to the server.
-  url: 'http://tiny-starburst.herokuapp.com/collections/chat'
+  url: 'http://twittertiy.herokuapp.com/collections/chat'
 });
 
 // Make a new Collection and Model for the user data
 
 var user = Backbone.Model.extend({
-    url: 'https://twitter-pi.herokuapp.com/users'
+    url: 'https://twittertiy.herokuapp.com/users'
 });
 
 
 var users = Backbone.Collection.extend({
   model: user,
-  url: 'https://twitter-pi.herokuapp.com/users'
+  url: 'https://twittertiy.herokuapp.com/users'
 });
 
 
@@ -147,12 +147,36 @@ var regView = Backbone.View.extend({
   tagName: 'section',
   className: 'regForm',
   template: _.template($('#RegisterTemplate').html()),
+  events: {
+    'click .registerBtn': 'handleReg'
+  },
+
+  send: function(){
+    var email = $('.email').val();
+    var password1 = $('.pwd').val();
+    var password2 = $('.pwd2').val();
+     if (email.trim() === '' || password1.trim() === '' || password2.trim() === ''){
+       alert('Please complete the form before submitting');
+     };
+
+     if (password1 != password2) {
+       alert('Passwords do not match!')
+     }
+   },
+
+   handleReg: function(){
+     event.preventDefault();
+
+     this.send();
+   },
 
   render: function(){
     this.$el.html(this.template());
     return this;
   }
 });
+
+
 
 // creates new instance of collected tweets
 var tweetsCollection = new Tweets();
