@@ -40,7 +40,8 @@ main {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 100%; }
+  width: 100%;
+  margin-top: 180px; }
   main:last-child {
     margin-right: 0; }
 
@@ -108,6 +109,15 @@ header .homeHeader {
   .feed header {
     border-bottom: 1px solid #E1E8ED;
     padding-bottom: 10px; }
+    .feed header p {
+      color: #000000;
+      font-size: 14px; }
+    .feed header a {
+      text-decoration: none;
+      color: #AAB8C2;
+      margin: 10px 15px 5px 15px; }
+      .feed header a:hover {
+        color: #53A7E8; }
   .feed .tweet {
     display: block;
     margin: 0px 0px 0px 0px; }

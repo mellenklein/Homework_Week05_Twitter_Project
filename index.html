@@ -40,6 +40,12 @@
         <a class="email" href="#user/:id"><%= email %></a>
         <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
         <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
+        <!-- <nav class="tweetNav"> -->
+          <a href="#" class="fa fa-reply"></a>
+          <a href="#" class="fa fa-retweet"></a>
+          <a href="#" class="fa fa-heart"></a>
+          <a href="#" class="fa fa-ellipsis-h"></a>
+        <!-- </nav> -->
       </header>
     </script>
 
@@ -49,6 +55,12 @@
         <a class="email" href="#dashboard"><%= email %></a>
         <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
         <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
+        <!-- <nav class="tweetNav"> -->
+          <a href="#" class="fa fa-reply"></a>
+          <a href="#" class="fa fa-retweet"></a>
+          <a href="#" class="fa fa-heart"></a>
+          <a href="#" class="fa fa-ellipsis-h"></a>
+        <!-- </nav> -->
       </header>
     </script>
 
