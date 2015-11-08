@@ -3,13 +3,6 @@
 @import "variables";
 @import "../bower_components/neat/app/assets/stylesheets/neat";
 
-@mixin vertical-align($position: relative) {
-  position: $position;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 
 body {
   @include outer-container;
@@ -25,20 +18,18 @@ html, body {
 }
 
 main {
-  @include outer-container(800px);
-  @include vertical-align();
-  margin-top: 500px;
-}
-
-
-main {
   @include span-columns(12 of 12);
-
-  margin-top: 180px;
+  @include vertical-align();
+  // margin-top: 180px
+  // max-height: 200px;
 }
+
 
 header.top {
-  margin-bottom: 100px;
+  @include span-columns(12 of 12);
+  // margin-bottom: 100px;
+  position: fixed;
+  background: #fff;
 }
 
 header {
@@ -110,7 +101,9 @@ header {
 
 .feed {
   display: block;
-  margin: 200px 50px 50px 200px;
+  margin: 100px 50px 50px 200px;
+  @include span-columns(6 of 12);
+  // position: absolute;
   img{
     float:left;
     margin-top: 20px;
@@ -166,11 +159,15 @@ header {
 
   }
 }
+
+
+//  login ------
 section.form,
 section.regForm {
   @include span-columns(4 of 12);
   text-align: center;
-  margin-left: 50%;
+  margin-left: 40%;
+  margin-top: 50%;
 
   input.email,
   input.pwd,

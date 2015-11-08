@@ -23,31 +23,26 @@ html, body {
   padding: 0; }
 
 main {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin-top: 500px; }
-  main::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-main {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%;
-  margin-top: 180px; }
+  position: relative;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
   main:last-child {
     margin-right: 0; }
 
 header.top {
-  margin-bottom: 100px; }
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  position: fixed;
+  background: #fff; }
+  header.top:last-child {
+    margin-right: 0; }
 
 header nav {
   margin: 10px; }
@@ -101,7 +96,13 @@ header .homeHeader {
 
 .feed {
   display: block;
-  margin: 200px 50px 50px 200px; }
+  margin: 0px 50px 50px 200px;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .feed:last-child {
+    margin-right: 0; }
   .feed img {
     float: left;
     margin-top: 20px;
@@ -149,7 +150,8 @@ section.regForm {
   margin-right: 2.35765%;
   width: 31.76157%;
   text-align: center;
-  margin-left: 50%; }
+  margin-left: 40%;
+  margin-top: 50%; }
   section.form:last-child,
   section.regForm:last-child {
     margin-right: 0; }
