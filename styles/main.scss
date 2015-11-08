@@ -3,8 +3,7 @@
 @import "variables";
 @import "../bower_components/neat/app/assets/stylesheets/neat";
 
-<<<<<<< HEAD
-=======
+
 @mixin vertical-align($position: relative) {
   position: $position;
   // top: 50%;
@@ -12,7 +11,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
->>>>>>> b550d4ca96883fafda2f3aea037939bfec999481
+
 
 body {
   @include outer-container;
@@ -44,21 +43,6 @@ header.top {
 }
 
 header {
-=======
-  // margin-top: 180px;s
-  // max-height: 500px;
-}
-
-
-header.top {
-  @include span-columns(12 of 12);
-  // margin-bottom: 100px;
-  position: fixed;
-  background: white;
-}
-
-header.top {
->>>>>>> b550d4ca96883fafda2f3aea037939bfec999481
   nav {
     margin: 10px;
     // background: gray;
@@ -129,12 +113,9 @@ header.top {
   @include span-columns(6 of 12);
   display: block;
   margin: 100px 50px 50px 200px;
-<<<<<<< HEAD
+
   @include span-columns(6 of 12);
   // position: absolute;
-=======
-  position: static;
->>>>>>> b550d4ca96883fafda2f3aea037939bfec999481
   img{
     float:left;
     margin-top: 20px;
