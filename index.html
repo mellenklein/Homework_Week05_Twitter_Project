@@ -10,11 +10,19 @@
   <body>
       <header class="top"></header>
       <section class="feed"></section>
+<<<<<<< HEAD
       <main>
       <section class="form"></section>
       </main>
 
 
+=======
+    <main>
+      <section class="form"></section>
+    </main>
+
+    <!-- <footer></footer> -->
+>>>>>>> b550d4ca96883fafda2f3aea037939bfec999481
 
     <script type="text/template" id="LoginTemplate">
       <input type="text" class="email" placeholder="Email or username"/>
@@ -32,22 +40,20 @@
     </script>
     <script type="text/template" id="tweetViewTemplate">
         <img src="http://www.fillmurray.com/50/50"/>
-      <header>
+      <header class="tweetHeader">
         <a class="email" href="#user/:id"><%= email %></a>
         <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
         <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
-        <!-- <nav class="tweetNav"> -->
           <a href="#" class="fa fa-reply"></a>
           <a href="#" class="fa fa-retweet"></a>
           <a href="#" class="fa fa-heart"></a>
           <a href="#" class="fa fa-ellipsis-h"></a>
-        <!-- </nav> -->
       </header>
     </script>
 
     <script type="text/template" id="followedTweetsTemplate">
       <img src="http://www.fillmurray.com/50/50"/>
-      <header>
+      <header class="tweetHeader">
         <a class="email" href="#dashboard"><%= email %></a>
         <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
         <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>

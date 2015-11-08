@@ -53,8 +53,9 @@ var AppRouter = Backbone.Router.extend({
   register: function(){
     var view = new regView();
     $('main').html(view.render().$el);
-    $('.forms').html('Register');
-    $('.forms').attr('href', 'register');
+    // $('.form').html('Register');
+    // $('.form').attr('href', 'register');
+
     var headerView = new HeaderRegisterView();
     headerView.render();
     $('.top').html(headerView.el);
