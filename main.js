@@ -90,11 +90,20 @@ var user = Backbone.Model.extend({
 
 var users = Backbone.Collection.extend({
   url: 'https://twittertiy.herokuapp.com/users',
-  model: user,
+  model: user
 });
 
 var newUsers = new users();
 
+//Make a new collection for the authenticator
+var authentic = Backbone.Collection.extend({
+  url: 'https://twittertiy.herokuapp.com/oauth/token',
+  model: userAuth
+});
+
+var userAuth = Backbone.Model.extend({
+  url: 'https://twittertiy.herokuapp.com/oauth/token'
+});
 
 //Make a new view for individual tweets.
 var TweetView = Backbone.View.extend({
@@ -133,10 +142,30 @@ var FeedView = Backbone.View.extend({
 });
 
 //Make a new view for the form.
+//Also recieve authenticator token when logging in
 var FormView = Backbone.View.extend({
   tagName: 'section',
   className: 'form',
   template: _.template($('#LoginTemplate').html()),
+  events: {
+    'click .loginBtn': 'handleLogin'
+  },
+
+  send: function(){
+    var email = $('.email').val();
+    var password = $('.pwd').val();
+
+    if (email.trim() === '' || password.trim() === '') {
+      alert("Please enter login information before submitting")
+    } else {
+      
+    }
+  },
+  handleLogin: function(){
+    event.preventDefault();
+
+    this.send();
+  },
 
   render: function(){
     this.$el.html(this.template());
@@ -144,10 +173,14 @@ var FormView = Backbone.View.extend({
   }
 });
 
+//Make a new view for the register page
 var regView = Backbone.View.extend({
   tagName: 'section',
   className: 'regForm',
   template: _.template($('#RegisterTemplate').html()),
+
+//A function that checks the user's input for valid data
+//then sends it to the API as a new user if it passes
   events: {
     'click .registerBtn': 'handleReg'
   },
