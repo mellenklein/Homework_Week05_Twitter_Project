@@ -174,8 +174,8 @@ var DashboardTweetView = Backbone.View.extend({
 });
 
 var DashboardFeedView = Backbone.View.extend({
-  tagName: 'section',
-  className: 'feed',
+  // tagName: 'section',
+  // className: 'feed',
 
   initialize: function(){
     this.listenTo(this.collection, 'fetch sync', this.render)

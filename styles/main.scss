@@ -27,11 +27,13 @@ html, body {
 main {
   @include outer-container(800px);
   @include vertical-align();
+  margin-top: 500px;
 }
 
 
-main{
+main {
   @include span-columns(12 of 12);
+  margin-top: 100px;
 }
 
 header.top {

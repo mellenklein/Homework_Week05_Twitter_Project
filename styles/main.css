@@ -30,7 +30,8 @@ main {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+  margin-top: 500px; }
   main::after {
     clear: both;
     content: "";
@@ -40,7 +41,8 @@ main {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 100%; }
+  width: 100%;
+  margin-top: 100px; }
   main:last-child {
     margin-right: 0; }
 
