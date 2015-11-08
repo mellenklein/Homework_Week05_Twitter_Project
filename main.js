@@ -43,25 +43,23 @@ var AppRouter = Backbone.Router.extend({
   },
 
   login: function(){
-    var loginForm = new FormView();
-    loginForm.render();
-    $('main').html(loginForm.el);
+    var view = new FormView();
+    $('main').html(view.render().$el);
     var headerView = new HeaderLoginView();
     headerView.render();
     $('.top').html(headerView.el);
   },
 
   register: function(){
-    var loginForm = new FormView();
-    loginForm.render();
-    $('main').html(loginForm.el);
+    var view = new regView();
+    $('main').html(view.render().$el);
     $('.forms').html('Register');
     $('.forms').attr('href', 'register');
     var headerView = new HeaderRegisterView();
     headerView.render();
     $('.top').html(headerView.el);
   }
-})
+});
 
 // $('nav a').click(function(){
 //
@@ -100,7 +98,19 @@ var Dashboard = Backbone.Collection.extend({
 var Form1 = Backbone.Model.extend({
   //When we click the login button,
   // this will use the POST method to send the form info to the server.
-  url: 'https://twittertiy.herokuapp.com/oauth/token'
+  url: 'http://twittertiy.herokuapp.com/collections/chat'
+});
+
+// Make a new Collection and Model for the user data
+
+var user = Backbone.Model.extend({
+    url: 'https://twittertiy.herokuapp.com/users'
+});
+
+
+var users = Backbone.Collection.extend({
+  model: user,
+  url: 'https://twittertiy.herokuapp.com/users'
 });
 
 var HeaderHome = Backbone.Model.extend({
@@ -189,7 +199,7 @@ var DashboardFeedView = Backbone.View.extend({
 var FormView = Backbone.View.extend({
   tagName: 'section',
   className: 'form',
-  template: _.template($('#inputBoxTemplate').html()),
+  template: _.template($('#LoginTemplate').html()),
 
   render: function(){
     this.$el.html(this.template());
@@ -219,6 +229,40 @@ var HeaderDashboardView = Backbone.View.extend({
     return this;
   }
 });
+
+var regView = Backbone.View.extend({
+  tagName: 'section',
+  className: 'regForm',
+  template: _.template($('#RegisterTemplate').html()),
+  events: {
+    'click .registerBtn': 'handleReg'
+  },
+
+  send: function(){
+    var email = $('.email').val();
+    var password1 = $('.pwd').val();
+    var password2 = $('.pwd2').val();
+     if (email.trim() === '' || password1.trim() === '' || password2.trim() === ''){
+       alert('Please complete the form before submitting');
+     };
+
+     if (password1 != password2) {
+       alert('Passwords do not match!')
+     }
+   },
+
+   handleReg: function(){
+     event.preventDefault();
+
+     this.send();
+   },
+
+  render: function(){
+    this.$el.html(this.template());
+    return this;
+  }
+});
+
 
 var HeaderLoginView = Backbone.View.extend({
   tagName: 'nav',
