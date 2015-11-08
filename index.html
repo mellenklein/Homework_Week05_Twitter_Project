@@ -15,8 +15,10 @@
           <a href="#user/:id">Profile</a>
           <a href="#users">Users</a>
           <a id="forms" href="#login">Login</a>
+          <a id="forms" href="#register">Sign Up</a>
         </nav>
       </header>
+
     <main>
 
       <section class="feed"></section>
@@ -34,12 +36,11 @@
 
     <script type="text/template" id="tweetViewTemplate">
         <img src="http://www.fillmurray.com/50/50"/>
-        <header>
-          <a class="email" href="#user/:id"><%= email %></a>
-          <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
-          <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
-        </header>
-
+      <header>
+        <a class="email" href="#user/:id"><%= email %></a>
+        <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
+        <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
+      </header>
     </script>
 
     <script type="text/template" id="followedTweetsTemplate">
@@ -49,8 +50,10 @@
         <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
         <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
       </header>
-
     </script>
+
+
+
 
 
     <script src="token.js"></script>

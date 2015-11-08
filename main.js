@@ -35,13 +35,13 @@ var AppRouter = Backbone.Router.extend({
 
   login: function(){
     var loginForm = new FormView();
-    loginForm.render()
+    loginForm.render();
     $('main').html(loginForm.el);
   },
 
   register: function(){
     var loginForm = new FormView();
-    loginForm.render()
+    loginForm.render();
     $('main').html(loginForm.el);
     $('.forms').html('Register');
     $('.forms').attr('href', 'register');
@@ -78,14 +78,14 @@ var Tweets = Backbone.Collection.extend({
 
 var Dashboard = Backbone.Collection.extend({
   model: Tweet,
-  url: 'https://twitter-pi.herokuapp.com/users/?include=tweets'
+  url: 'https://twittertiy.herokuapp.com/users'
 });
 
 // Make a new Model for the login and register pages:
 var Form1 = Backbone.Model.extend({
   //When we click the login button,
   // this will use the POST method to send the form info to the server.
-  url: 'http://tiny-starburst.herokuapp.com/collections/chat'
+  url: 'https://twittertiy.herokuapp.com/oauth/token'
 });
 
 
