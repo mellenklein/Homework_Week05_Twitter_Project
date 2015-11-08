@@ -34,6 +34,10 @@ main{
   @include span-columns(12 of 12);
 }
 
+header.top {
+  margin-bottom: 100px;
+}
+
 header {
   nav {
     margin: 10px;
@@ -103,7 +107,7 @@ header {
 
 .feed {
   display: block;
-  margin: 50px;
+  margin: 200px 50px 50px 200px;
   img{
     float:left;
     margin-top: 20px;
@@ -133,13 +137,15 @@ header {
     padding: 10px 0;
   }
 }
-section.form {
+section.form,
+section.regForm {
   @include span-columns(4 of 12);
   text-align: center;
   margin-left: 50%;
 
   input.email,
-  input.pwd {
+  input.pwd,
+  input.pwd2 {
     width: 100%;
     margin: 5px;
     font-size: 0.8em;
@@ -163,7 +169,8 @@ section.form {
     }
   }
 
-  a.login{
+  a.login,
+  .registerBtn {
     color: white;
     text-decoration: none;
     background: $twitterBlue;
@@ -175,5 +182,14 @@ section.form {
     border-radius: 5px;
     text-align: center;
     margin-left: 5px;
+  }
+  .registerBtn {
+    margin: 5px;
+    padding: 10px 95px;
+  }
+  a.loginLink {
+    text-decoration: none;
+    color: $twitterBlue;
+    display: none;
   }
 }

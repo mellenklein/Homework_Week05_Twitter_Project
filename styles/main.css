@@ -44,6 +44,9 @@ main {
   main:last-child {
     margin-right: 0; }
 
+header.top {
+  margin-bottom: 100px; }
+
 header nav {
   margin: 10px; }
   header nav a {
@@ -96,7 +99,7 @@ header .homeHeader {
 
 .feed {
   display: block;
-  margin: 50px; }
+  margin: 200px 50px 50px 200px; }
   .feed img {
     float: left;
     margin-top: 20px;
@@ -121,36 +124,48 @@ header .homeHeader {
     line-height: 58px;
     padding: 10px 0; }
 
-section.form {
+section.form,
+section.regForm {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 31.76157%;
   text-align: center;
   margin-left: 50%; }
-  section.form:last-child {
+  section.form:last-child,
+  section.regForm:last-child {
     margin-right: 0; }
   section.form input.email,
-  section.form input.pwd {
+  section.form input.pwd,
+  section.form input.pwd2,
+  section.regForm input.email,
+  section.regForm input.pwd,
+  section.regForm input.pwd2 {
     width: 100%;
     margin: 5px;
     font-size: 0.8em;
     padding: 8px 60px 8px 5px;
     border-radius: 5px;
     border: 1px solid #E1E8ED; }
-  section.form .instructions {
+  section.form .instructions,
+  section.regForm .instructions {
     color: gray;
     font-size: 0.9em;
     border-top: 1px solid #E1E8ED;
     padding-top: 15px; }
-    section.form .instructions a {
+    section.form .instructions a,
+    section.regForm .instructions a {
       text-decoration: none;
       color: #53A7E8;
       transition: text-decoration 0.5s ease; }
-      section.form .instructions a:hover {
+      section.form .instructions a:hover,
+      section.regForm .instructions a:hover {
         text-decoration: underline;
         transition: text-decoration 0.5s ease; }
-  section.form a.login {
+  section.form a.login,
+  section.form .registerBtn,
+  section.regForm a.login,
+  section.regForm .registerBtn {
     color: white;
     text-decoration: none;
     background: #53A7E8;
@@ -162,3 +177,12 @@ section.form {
     border-radius: 5px;
     text-align: center;
     margin-left: 5px; }
+  section.form .registerBtn,
+  section.regForm .registerBtn {
+    margin: 5px;
+    padding: 10px 95px; }
+  section.form a.loginLink,
+  section.regForm a.loginLink {
+    text-decoration: none;
+    color: #53A7E8;
+    display: none; }

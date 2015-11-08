@@ -140,8 +140,8 @@ var TweetView = Backbone.View.extend({
 
 //Make a new view the twitter feed.
 var FeedView = Backbone.View.extend({
-  tagName: 'section',
-  className: 'feed',
+  // tagName: 'section',
+  // className: 'feed',
 
   initialize: function(){
     this.listenTo(this.collection, 'fetch sync', this.render)
