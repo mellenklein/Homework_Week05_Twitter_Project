@@ -104,18 +104,17 @@ var Form1 = Backbone.Model.extend({
 // Make a new Collection and Model for the user data
 
 var user = Backbone.Model.extend({
-    url: 'https://twittertiy.herokuapp.com/users'
+  url: 'https://twittertiy.herokuapp.com/users'
 });
 
 
 var users = Backbone.Collection.extend({
+  url: 'https://twittertiy.herokuapp.com/users',
   model: user,
-  url: 'https://twittertiy.herokuapp.com/users'
 });
 
-var HeaderHome = Backbone.Model.extend({
-  url: 'https://twittertiy.herokuapp.com/users'
-});
+var newUsers = new users();
+
 
 
 //////////////////////////////////////////
@@ -244,10 +243,17 @@ var regView = Backbone.View.extend({
     var password2 = $('.pwd2').val();
      if (email.trim() === '' || password1.trim() === '' || password2.trim() === ''){
        alert('Please complete the form before submitting');
-     };
-
-     if (password1 != password2) {
+     } else if (password1 != password2) {
        alert('Passwords do not match!')
+     } else {
+       newUsers.create({"user":{
+         "email": email,
+         "password": password1
+       }});
+       $('.email').val('');
+       $('.pwd').val('');
+       $('.pwd2').val('');
+       alert('Thank you for registering!');
      }
    },
 
