@@ -10,11 +10,13 @@
   <body>
       <header class="top"></header>
       <section class="feed"></section>
-    <main>
-      <section class="form"></section>
-    </main>
 
-    <!-- <footer></footer> -->
+      <main>
+      <section class="form"></section>
+      </main>
+
+
+
 
     <script type="text/template" id="LoginTemplate">
       <input type="text" class="email" placeholder="Email or username"/>
@@ -34,7 +36,7 @@
         <img src="http://www.fillmurray.com/50/50"/>
       <header class="tweetHeader">
         <a class="email" href="#user/:id"><%= email %></a>
-        <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
+        <time><%= moment(created_at).startOf('day').fromNow() %></time>
         <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
           <a href="#" class="fa fa-reply"></a>
           <a href="#" class="fa fa-retweet"></a>
@@ -47,7 +49,7 @@
       <img src="http://www.fillmurray.com/50/50"/>
       <header class="tweetHeader">
         <a class="email" href="#dashboard"><%= email %></a>
-        <time><%= moment(tweets.created_at).startOf('day').fromNow() %></time>
+        <time><%= moment(created_at).startOf('day').fromNow() %></time>
         <p class="tweet">Tweet: <%= _.map(tweets, 'body') %></p>
         <!-- <nav class="tweetNav"> -->
           <a href="#" class="fa fa-reply"></a>

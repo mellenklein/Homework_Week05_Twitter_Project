@@ -40,23 +40,23 @@ header.top {
   margin-right: 2.35765%;
   width: 100%;
   position: fixed;
-  background: white; }
+  background: #fff; }
   header.top:last-child {
     margin-right: 0; }
 
-header.top nav {
+header nav {
   margin: 10px; }
-  header.top nav a {
+  header nav a {
     text-decoration: none;
     color: #53A7E8;
     font-size: 1.5em;
     padding: 50px 10px 10px;
     margin-left: 50px; }
-    header.top nav a:hover {
+    header nav a:hover {
       color: navy; }
-    header.top nav a .fa {
+    header nav a .fa {
       font-size: 2em; }
-  header.top nav a#searchBtn {
+  header nav a#searchBtn {
     margin-left: 0;
     font-size: 1em;
     border: 1px solid #E1E8ED;
@@ -64,34 +64,34 @@ header.top nav {
     padding: 3px;
     color: white;
     background-color: #53A7E8; }
-  header.top nav #logOutBtn {
+  header nav #logOutBtn {
     font-size: 1em;
     margin-left: 0; }
-  header.top nav .smallAvatar {
+  header nav .smallAvatar {
     border-radius: 5px; }
-  header.top nav .profileHeader {
+  header nav .profileHeader {
     float: right; }
-    header.top nav .profileHeader input {
+    header nav .profileHeader input {
       border-radius: 10px;
       padding: 5px;
       border: 1px solid #E1E8ED; }
-  header.top nav .twitterBird {
+  header nav .twitterBird {
     margin-left: 280px;
     font-size: 1em; }
-  header.top nav #homeBtn {
+  header nav #homeBtn {
     font-size: 1em; }
-  header.top nav .loginHeader {
+  header nav .loginHeader {
     text-align: center;
     display: inline;
     margin-left: 35%;
     color: gray; }
-    header.top nav .loginHeader .login {
+    header nav .loginHeader .login {
       font-size: 1em;
       margin-left: 0px; }
 
-header.top .homeHeader {
+header .homeHeader {
   float: right; }
-  header.top .homeHeader a {
+  header .homeHeader a {
     font-size: 1em; }
 
 .feed {
@@ -101,7 +101,12 @@ header.top .homeHeader {
   width: 48.82117%;
   display: block;
   margin: 100px 50px 50px 200px;
-  position: static; }
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .feed:last-child {
+    margin-right: 0; }
   .feed:last-child {
     margin-right: 0; }
   .feed img {
