@@ -114,8 +114,7 @@ header {
   display: block;
   margin: 100px 50px 50px 200px;
 
-  @include span-columns(6 of 12);
-  // position: absolute;
+
   img{
     float:left;
     margin-top: 20px;
@@ -184,7 +183,6 @@ section.regForm {
   input.email,
   input.pwd,
   input.pwd2 {
-    width: 100%;
     margin: 5px;
     font-size: 0.8em;
     padding: 8px 60px 8px 5px;
@@ -200,6 +198,7 @@ section.regForm {
       text-decoration: none;
       color: $twitterBlue;
       transition: text-decoration 0.5s ease;
+      padding: 10px 60px;
       &:hover{
         text-decoration: underline;
         transition: text-decoration 0.5s ease;

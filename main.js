@@ -44,7 +44,7 @@ var AppRouter = Backbone.Router.extend({
 
   login: function(){
     var view = new FormView();
-    $('main').html(view.render().$el);
+    $('.form').html(view.render().$el);
     var headerView = new HeaderLoginView();
     headerView.render();
     $('.top').html(headerView.el);
@@ -52,7 +52,7 @@ var AppRouter = Backbone.Router.extend({
 
   register: function(){
     var view = new regView();
-    $('main').html(view.render().$el);
+    $('.regForm').html(view.render().$el);
     // $('.form').html('Register');
     // $('.form').attr('href', 'register');
 

@@ -100,13 +100,7 @@ header .homeHeader {
   margin-right: 2.35765%;
   width: 48.82117%;
   display: block;
-  margin: 100px 50px 50px 200px;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%; }
-  .feed:last-child {
-    margin-right: 0; }
+  margin: 100px 50px 50px 200px; }
   .feed:last-child {
     margin-right: 0; }
   .feed img {
@@ -167,7 +161,6 @@ section.regForm {
   section.regForm input.email,
   section.regForm input.pwd,
   section.regForm input.pwd2 {
-    width: 100%;
     margin: 5px;
     font-size: 0.8em;
     padding: 8px 60px 8px 5px;
@@ -183,7 +176,8 @@ section.regForm {
     section.regForm .instructions a {
       text-decoration: none;
       color: #53A7E8;
-      transition: text-decoration 0.5s ease; }
+      transition: text-decoration 0.5s ease;
+      padding: 10px 60px; }
       section.form .instructions a:hover,
       section.regForm .instructions a:hover {
         text-decoration: underline;
