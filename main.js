@@ -95,15 +95,8 @@ var users = Backbone.Collection.extend({
 
 var newUsers = new users();
 
-//Make a new collection for the authenticator
-var authentic = Backbone.Collection.extend({
-  url: 'https://twittertiy.herokuapp.com/oauth/token',
-  model: userAuth
-});
 
-var userAuth = Backbone.Model.extend({
-  url: 'https://twittertiy.herokuapp.com/oauth/token'
-});
+
 
 //Make a new view for individual tweets.
 var TweetView = Backbone.View.extend({
@@ -143,6 +136,10 @@ var FeedView = Backbone.View.extend({
 
 //Make a new view for the form.
 //Also recieve authenticator token when logging in
+
+var AuthCollect = Backbone.Collection.extend({
+  url: 'https://twittertiy.herokuapp.com/oauth/token'
+});
 var FormView = Backbone.View.extend({
   tagName: 'section',
   className: 'form',
@@ -153,14 +150,24 @@ var FormView = Backbone.View.extend({
 
   send: function(){
     var email = $('.email').val();
-    var password = $('.pwd').val();
+    var pword = $('.pwd').val();
 
-    if (email.trim() === '' || password.trim() === '') {
+    if (email.trim() === '' || pword.trim() === '') {
       alert("Please enter login information before submitting")
     } else {
-      
-    }
-  },
+        authCollect = new AuthCollect();
+        authCollect.create({
+          "grant_type": "password",
+           "username": email,
+           "password": pword
+        }, {
+          success: function(newModel, data, options) {
+            //set the data response token to the header for all your ajax requests
+          }
+        })
+
+      }
+    },
   handleLogin: function(){
     event.preventDefault();
 
